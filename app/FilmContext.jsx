@@ -10,7 +10,7 @@ function FilmProvider({ children }) {
   const [nominated, setNominated] = useState([]);
   const [nominatedID, setNominatedID] = useState([]);
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?s=${input}&apikey=559d978c`)
+    fetch(`https://www.omdbapi.com/?s=${input}&apikey=559d978c`)
       .then((res) => res.json())
       .then((data) => setFilms(data.Search));
   }, [input]);
