@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { FilmContext } from "../FilmContext";
 import Link from "next/link";
 
-export default function page() {
+export default function Page() {
   const { nominated } = useContext(FilmContext);
   const [winner, setWinner] = useState();
   useEffect(() => {
