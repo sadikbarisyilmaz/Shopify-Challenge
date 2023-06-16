@@ -7,24 +7,9 @@ import Nominated from "./Nominated";
 import { FilmContext } from "./FilmContext";
 import Link from "next/link";
 export default function Home() {
-  const {
-    films,
-    setFilms,
-    input,
-    setInput,
-    nominated,
-    setNominated,
-    nominatedID,
-    setNominatedID,
-  } = useContext(FilmContext);
-  console.log(films);
+  const { films, setInput, nominated } = useContext(FilmContext);
   return (
     <div className="p-8">
-      {/* <nav className="flex items-center justify-between px-20">
-        <div>LOGO</div>
-        <div>Nominated {nominated.length}/5</div>
-      </nav> */}
-
       <main className="md:p-14 grid gap-4 md:gap-14 justify-center">
         <div>
           <div className="text-xl text-center mb-8">

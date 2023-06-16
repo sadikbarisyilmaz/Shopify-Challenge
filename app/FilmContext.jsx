@@ -6,7 +6,7 @@ const FilmContext = React.createContext();
 
 function FilmProvider({ children }) {
   const [films, setFilms] = useState();
-  const [input, setInput] = useState("Potter");
+  const [input, setInput] = useState("");
   const [nominated, setNominated] = useState([]);
   const [nominatedID, setNominatedID] = useState([]);
   useEffect(() => {

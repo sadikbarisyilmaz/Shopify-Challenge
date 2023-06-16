@@ -6,7 +6,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { FilmContext } from "./FilmContext";
 function SearchItem() {
-  const { films, nominated, setNominated, nominatedID, setNominatedID } =
+  const { films, nominated, setNominated, nominatedID, setNominatedID, input } =
     useContext(FilmContext);
 
   const handleClick = (film, e) => {
@@ -20,7 +20,7 @@ function SearchItem() {
 
   return (
     <List>
-      {films !== undefined ? (
+      {input !== "" && films !== undefined ? (
         films.slice(0, 5).map((film, i) => {
           return (
             <ListItem key={i} disablePadding>
@@ -33,14 +33,18 @@ function SearchItem() {
                     <img src={`${film.Poster}`} alt="Poster" />
                   </div>
                   <ListItemText primary={`${film.Title}`} />
-                  <ListItemText primary={`${film.Year}`} />
+                  <ListItemText className="text-end" primary={`${film.Year}`} />
                 </div>
               </ListItemButton>
             </ListItem>
           );
         })
+      ) : input === "" ? (
+        ""
       ) : (
-        <div className="loader"></div>
+        <div className="grid justify-center">
+          <div className="loader"></div>
+        </div>
       )}
     </List>
   );

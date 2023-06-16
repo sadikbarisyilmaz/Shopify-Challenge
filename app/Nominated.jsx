@@ -28,7 +28,7 @@ function Nominated() {
                     <img src={`${film.Poster}`} alt="Poster" />
                   </div>
                   <ListItemText primary={`${film.Title}`} />
-                  <ListItemText primary={`${film.Year}`} />
+                  <ListItemText className="text-end" primary={`${film.Year}`} />
                 </div>
               </ListItemButton>
             </ListItem>
